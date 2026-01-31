@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Country;
+use App\Repository\CountryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -12,13 +13,17 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/api/countries')]
 class CountryController extends AbstractController
 {
-    /*
+    private const array ALLOWED_COUNTRIES = [
+        'RO' => 'Romania'
+    ];
+
     #[Route('', methods: ['GET'])]
-    public function index(ProductRepository $repo): JsonResponse
+    public function index(CountryRepository $repo): JsonResponse
     {
         return $this->json($repo->findAll());
     }
 
+    /*
     #[Route('/{id}', methods: ['GET'])]
     public function show(Product $product): JsonResponse
     {

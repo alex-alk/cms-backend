@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CountryRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+//todo: cc sa fie unic
 #[ORM\Entity(repositoryClass: CountryRepository::class)]
 class Country
 {
