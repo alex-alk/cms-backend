@@ -14,11 +14,14 @@ class Country
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 2)]
+    #[ORM\Column(length: 2, unique: true)]
     private ?string $cc = null;
 
     #[ORM\Column(length: 100)]
     private ?string $name = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $nameRo = null;
 
     public function getId(): ?int
     {
@@ -45,6 +48,18 @@ class Country
     public function setName(string $name): static
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getNameRo(): ?string
+    {
+        return $this->nameRo;
+    }
+
+    public function setNameRo(string $nameRo): static
+    {
+        $this->nameRo = $nameRo;
 
         return $this;
     }
